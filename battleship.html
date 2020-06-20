@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>BattleShips</title>
+		<meta charset="utf-8">
+		<style>
+			body{
+				background-color: black;
+
+			}
+			#board{
+				width:1024px;
+				height: 863px;
+				position: relative;
+				margin:auto;
+				background: url("board.jpg") no-repeat;
+				border-style: outset;
+				border-width: 5px;
+				border-radius: 20px;
+				border-color: #38e065;
+			}
+			#messageArea{
+				position: absolute;
+				top:20px;
+				left:30px;
+				color:#0cf048;
+				opacity: 1;
+				font-family: "Segoe UI";
+				font-weight: 500;
+				font-size:26px;
+
+			}
+			h3{
+				font-family: "Lucida Sans";
+				font-weight: bold;
+				color:lightgreen;
+				text-align: center;
+			}
+			#name{
+				position: absolute;
+				padding:6px;
+				top:0px;
+				right:0px;
+				width:227px;
+				height:550px;
+				top:8px;
+				background-color: #16470b;
+				border-radius:15px;
+				border-style: solid;
+				border-color: #3a9e43;
+				border-width: 5px;
+				font-family: "Segoe UI";
+				font-size:17px;
+				color: #0cf048;
+				text-align:justify-all;
+
+		
+			}
+			
+			table{
+				position: absolute;
+				left:173px;
+				top:98px;
+				border-spacing: 0px;
+			}
+			td{
+				width:94px;
+				height: 94px;
+
+			}
+			form {
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				padding:2px 15px 4px 15px;
+				background-color: rgb(83, 175, 19);
+				opacity: 1;
+				border-style: outset;
+				border-width:2px;
+				border-top-left-radius: 9px;
+				border-bottom-right-radius: 10px;
+
+			}
+			form input {
+				background-color: rgb(152, 207, 113);
+				border-color: rgb(83, 175, 19);
+				font-size: 25px;
+			}
+			input[type="text"]{
+				border-radius: 6px;
+				width:130px;
+
+			}
+			input[type="button"]{
+				border-radius: 6px;
+				padding: 3px;
+				width:90px;
+				font-family: "Segoe UI";
+				font-weight: bold;
+				color: #87fa90;
+				background-color: #035409;
+			}
+			input[type="button"]:hover{
+				background-color:#e84141;
+				color: #450303;
+
+			}
+			.hit {
+				background: url("ship.png") no-repeat center center;
+			}
+			.miss {
+				background: url("miss.png") no-repeat center center;
+			}
+			input[type="reset"]{
+				font-size: 18px;
+				background-color:darkgreen;
+				width:150px;
+				font-family: "Segoe UI";
+				font-weight: 500 ;
+				border-style: outset;
+				border-width: 3px;
+				border-radius:9px;
+				color:#0aff4d;  ;
+				padding: 5px;
+				margin-left: 35px;
+			}
+			input[type="reset"]:hover{
+				background-color:#014714;
+			}
+		
+		</style>
+	</head>
+
+	<body id = "font">
+		<div id ="name">
+			<h3>How to Play Battleship?</h3>
+			<p>&#9875 Type in a cell number   (eg: A3, b5)  in the Fire box below.<br><br>&#9875 Click 'Fire' or press Enter to attack the entered cell.</br></br><h3> About Ships</h3>&#9875 One Ship is made up of three cells.<br><br>&#9875 You have to hit all three cells to sink a ship.<br><br>&#9875 There are 3 ships on the board. Sink all three to win the game.</p>
+			
+			<input type ="reset" id="newGame" value="Start New Game " onClick="window.location.reload();">
+
+		</div>
+		<div id ="board">
+		  <div id="messageArea">&#128674 Let's Play Battleship! Press F11 to go FullScreen</div>
+			<table>
+				<tr>
+					<td id="00"></td>
+					<td id="01"></td>
+					<td id="02"></td>
+					<td id="03"></td>
+					<td id="04"></td>
+					<td id="05"></td>
+					<td id="06"></td>
+				</tr>
+
+				<tr>
+					<td id="10"></td>
+					<td id="11"></td>
+					<td id="12"></td>
+					<td id ="13"></td>
+					<td id="14"></td>
+					<td id="15"></td>
+					<td id="16"></td>
+				</tr>
+
+				<tr>
+					<td id="20"></td>
+					<td id="21"></td>
+					<td id="22"></td>
+					<td id="23"></td>
+					<td id="24"></td>
+					<td id="25"></td>
+					<td id="26"></td>
+				</tr>
+
+				<tr>
+					<td id="30"></td>
+					<td id="31"></td>
+					<td id="32"></td>
+					<td id="33"></td>
+					<td id="34"></td>
+					<td id="35"></td>
+					<td id="36"></td>
+				</tr>
+
+				<tr>
+					<td id="40"></td>
+					<td id="41"></td>
+					<td id="42"></td>
+					<td id="43"></td>
+					<td id="44"></td>
+					<td id="45"></td>
+					<td id="46"></td>
+				</tr>
+
+				<tr>
+					<td id="50"></td>
+					<td id="51"></td>
+					<td id="52"></td>
+					<td id="53"></td>
+					<td id="54"></td>
+					<td id="55"></td>
+					<td id="56"></td>
+				</tr>
+
+				<tr>
+					<td id="60"></td>
+					<td id="61"></td>
+					<td id="62"></td>
+					<td id="63"></td>
+					<td id="64"></td>
+					<td id="65"></td>
+					<td id="66"></td>
+				</tr>
+
+					
+			</table>
+
+			<form>
+				<input type="text" id="guessInput" placeholder="A0 / a0">
+				<input type="button" id="fireButton" value="Fire!">
+			</form>
+		</div>
+		<script src="battleship.js">
+		</script>
+	</body>
+	</html>
